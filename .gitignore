@@ -1,0 +1,19 @@
+# File types #
+##############
+*.pyc
+*.swo
+*.swp
+*.swn
+*.sqlite3
+
+# Directories #
+###############
+logs/
+
+# Specific files #
+##################
+pvpc_info/settings.py
+
+# OS generated files #
+######################
+*~
