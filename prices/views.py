@@ -4,8 +4,6 @@ from django.conf import settings
 from django.db.models import Max, Min, ObjectDoesNotExist
 from django.views.generic import TemplateView
 
-from chartit import PivotDataPool, PivotChart
-
 from prices.models import Price
 
 ENERGY_TAX = getattr(settings, 'KWH_ENERGY_TAX')
