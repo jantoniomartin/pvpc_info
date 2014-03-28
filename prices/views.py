@@ -56,8 +56,8 @@ class HomeView(TemplateView):
 		for price in hour_history_qs:
 			hour_history.append([price.date.day, "%.5f" % price.taxed])
 
-		print hour_history
-
+		analytics_id = getattr(settings, 'ANALYTICS_ID', None)
+		
 		ctx.update({
 			'hour': hour,
 			'current': current_general.taxed,
@@ -70,5 +70,8 @@ class HomeView(TemplateView):
 			'hn': expensive[1],
 			'hv': expensive[2],
 			'hour_history': hour_history,
+			'analytics_id': analytics_id,
 			})
+		
+
 		return ctx
