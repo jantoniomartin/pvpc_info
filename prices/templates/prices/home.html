@@ -6,14 +6,13 @@
 
 {% endblock %}
 
-{% block title %}El precio de la electricidad al minuto{% endblock %}
+{% block title %}El precio de la electricidad, al minuto{% endblock %}
 
 {% block content %}
 
 {% cache cache_seconds home %}
 
-<h1>¿Cuánto me cuesta la energía eléctrica ahora mismo?
-</h1>
+<h1>El precio de la electricidad, al minuto</h1>
 
 <div class="panel text-center panel-{% if current >= hg %}danger
 	{% elif current <= lg %}success
@@ -99,6 +98,10 @@
 	Este precio se puede conocer desde una horas antes en
 	<a href="http://www.esios.ree.es/red-publica/">la web de Red Eléctrica de
 		España.</a></p>
+	<p>La facturación por horas solo se aplica a los abonados que tienen un
+	contador digital. El precio para el resto de abonados es la media del
+	periodo de facturación.</p>
+
 
 	<h3>¿Y si quiero evitar este lío?</h3>
 	<p>Si quieres evitar un precio distinto cada hora, necesitas cambiar de
