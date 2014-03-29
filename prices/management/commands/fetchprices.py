@@ -37,6 +37,9 @@ class Command(NoArgsCommand):
 
 		buf.close()
 
+		if len(tds) < 72:
+			return
+
 		for i in range(0, 72):
 			if i == 0 or i % 3 == 0:
 				tariff = 0
