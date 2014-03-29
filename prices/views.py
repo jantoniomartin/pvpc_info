@@ -9,6 +9,10 @@ from prices.models import Price
 ENERGY_TAX = getattr(settings, 'KWH_ENERGY_TAX')
 
 
+def _seconds_to_the_hour():
+	now = datetime.now()
+	return 3600 - (now.minute * 60 + now.second)
+
 class HomeView(TemplateView):
 	template_name = "prices/home.html"
 
@@ -71,6 +75,7 @@ class HomeView(TemplateView):
 			'hv': expensive[2],
 			'hour_history': hour_history,
 			'analytics_id': analytics_id,
+			'cache_seconds': _seconds_to_the_hour(),
 			})
 		
 
